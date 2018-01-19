@@ -1,0 +1,30 @@
+#+1431884210
+pico
+#+1431884330
+ls
+#+1431884345
+pico test.cpp
+#+1431981208
+nano README
+#+1431981309
+g++ test.cpp
+#+1431981372
+g++ frac.h test.cpp
+#+1431981535
+rm frac.h.gch
+#+1431981596
+nano
+#+1431981650
+nano test.cpp
+#+1432140060
+rm a.out
+#+1432140083
+g++ frac.cpp test.cpp
+#+1432140095
+./a.out
+#+1432427596
+cd hw1
+#+1432427599
+ll
+#+1432427608
+nano triangle.h

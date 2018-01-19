@@ -1,0 +1,33 @@
+# This file contains the setup commands common to both .login and
+# .xinitrc and is called by both.
+
+if ( -x /usr/ucb/arch ) then
+  setenv HOSTTYPE `/usr/ucb/arch`
+else if ( -x /usr/bin/arch ) then
+  setenv HOSTTYPE `/usr/bin/arch`
+else if ( -x /bin/uname ) then
+  setenv HOSTTYPE `/bin/uname -s`
+endif
+
+setenv MANPATH /usr/man:/usr/share/man:/usr/local/man:/opt/SUNWspro/man:/usr/local/share/man:/usr/kerberos/man:/usr/X11R6/man
+setenv EDITOR           pico
+setenv LD_LIBRARY_PATH  /usr/lib:/usr/local/lib
+setenv OPENWINHOME     /usr/openwin
+setenv MACHINE 	        `hostname`
+setenv NNTPSERVER 	news.fsu.edu
+setenv DOMAINNAME 	cs.fsu.edu
+if ( -d /usr/lib/X11/app-defaults ) then
+  setenv XAPPLRESDIR      /usr/lib/X11/app-defaults/
+else if ( -d /usr/X11R6/lib/X11/app-defaults ) then
+  setenv XAPPLRESDIR      /usr/X11R6/lib/X11/app-defaults/
+endif
+
+setenv ORGANIZATION 	"FSU Computer Science Department"
+
+setenv NEWSHEADER 'Newsgroups: %(%F=^$?%C:%F)\nSubject: %(%S=^$?%"\n\nSubject: ":Re: %s)\n%(%R=^$?:References: %R\n)Distribution: %(%i=^$?%"Distribution: ":%D)\nFollowup-To:\nReply-To: %L@nu.cs.fsu.edu\nOrganization: %o\n\n'
+
+setenv MAILHEADER 'Newsgroups: %(%n=^$?%C:%n)\nSubject: %(%S=^$?%"\n\nSubject: ":Re: %s)\n%(%R=^$?:References: %R\n)Distribution: %(%i=^$?%"Distribution: ":%D)\nFollowup-To:\nReply-To: %L@nu.cs.fsu.edu\nOrganization: %o\n\n'
+
+umask 077
+
+mesg n
