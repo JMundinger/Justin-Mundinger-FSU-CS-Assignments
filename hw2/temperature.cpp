@@ -5,13 +5,13 @@
 
 using namespace std;
 
-Temperature::Temperature()
+Temperature::Temperature() //default constructor initializes instance variables
 {
   degrees_ = 0;
   scale_ = 'C';
   format_ = 'D';
 }
-Temperature::Temperature(double d, char s)
+Temperature::Temperature(double d, char s) //constructor initializes instance variables, if outside conditions sets variables to default
 {
   s = (toupper(s));
   format_ = 'D';
@@ -36,7 +36,7 @@ Temperature::Temperature(double d, char s)
     scale_ = s;
   }
 }
-void Temperature::Input()
+void Temperature::Input() //sets user input to instance variables
 {
 char scale;
 double deg;
@@ -45,7 +45,7 @@ do
 cout << "Enter a valid temperature and scale (C, F, or K):\n";
 cin >> deg >> scale;
 }
-while(Set(deg, scale)==false);
+while(Set(deg, scale)==false); //while Set function returns false, when valid values are entered, while loop exits
 
 degrees_ = deg;
 scale_ = (toupper(scale));
@@ -77,7 +77,7 @@ void Temperature::Show()
   }
 }
 
-bool Temperature::Set(double deg, char s)
+bool Temperature::Set(double deg, char s) //if parameters are outside scale ranges, function returns false, else sets parameters to variables
 {
 s = (toupper(s));
 if(deg < 0 && s=='K')
@@ -96,11 +96,11 @@ else
 }
 }
 
-double Temperature::GetDegrees()
+double Temperature::GetDegrees() //returns instance variable degrees
 {
   return degrees_;
 }
-char Temperature::GetScale()
+char Temperature::GetScale() //returns the scale of the Temperature object
 {
   return scale_;
 }
@@ -191,7 +191,7 @@ int Temperature::Compare(const Temperature& d)
 }
 
 //extra credit
-void Temperature::Increment(int deg, char sc)
+void Temperature::Increment(int deg, char sc) //converts temp to new scale, adds degrees of that scale, then converts back to original scale
 {
   char s = scale_;
   Convert(sc);
