@@ -15,7 +15,7 @@ public:
   void Input(); 
   void Show();
 
-  bool Set(double deg, char s); //set function
+  bool Set(double deg, char s); //sets user input equal to class instance variables
 
   //accessor functions
   double GetDegrees(); //function that returns degrees (double)
