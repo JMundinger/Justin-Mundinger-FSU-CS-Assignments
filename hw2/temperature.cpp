@@ -51,7 +51,7 @@ degrees_ = deg;
 scale_ = (toupper(scale));
 }
 
-void Temperature::Show()
+void Temperature::Show() //prints the temperature data depending on the format
 {
   char x = (toupper(scale_));
   if(format_=='D')
@@ -105,7 +105,7 @@ char Temperature::GetScale() //returns the scale of the Temperature object
   return scale_;
 }
 
-bool Temperature::SetFormat(char f)
+bool Temperature::SetFormat(char f) //sets the format of the temp, which determines how it is printed in Show() function
 {
 f = (toupper(f));
 if(f =='D')
@@ -126,7 +126,7 @@ else if(f=='L')
 else
   return false;
 }
-bool Temperature::Convert(char sc)
+bool Temperature::Convert(char sc) //Converts temperature instance variables to different scale
 {
   scale_ = (toupper(scale_));
   sc = (toupper(sc));
@@ -178,7 +178,7 @@ bool Temperature::Convert(char sc)
   else
     return false;
 }
-int Temperature::Compare(const Temperature& d)
+int Temperature::Compare(const Temperature& d) //converts temp to same scale, returns int that cooresponds to temp if it is >, <, or =
 {
   double x = d.degrees_;
   degrees_ = Convert(d.scale_);
