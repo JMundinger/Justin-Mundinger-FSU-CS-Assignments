@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int main()
+int main() //Main function that tests class functions
 {
 Temperature t1;
 Temperature t2(68.9, 'f');
