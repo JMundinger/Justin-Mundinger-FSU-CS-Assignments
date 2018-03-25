@@ -9,27 +9,27 @@ class Temperature
 {
 
 public:
-  Temperature();
-  Temperature(double, char);
+  Temperature(); //default constructor
+  Temperature(double, char); //constructor
 
-  void Input();
+  void Input(); 
   void Show();
 
-  bool Set(double deg, char s);
+  bool Set(double deg, char s); //set function
 
   //accessor functions
-  double GetDegrees();
-  char GetScale();
+  double GetDegrees(); //function that returns degrees (double)
+  char GetScale(); //function that returns the scale (F, C, or K)
 
-  bool SetFormat(char);
-  bool Convert(char sc);
+  bool SetFormat(char); //
+  bool Convert(char sc); //function that converts temperature to another scale
 
   int Compare(const Temperature& d);
   void Increment(int, char);
 
 private:
-
-double degrees_;
+//instance variables
+double degrees_; 
 char scale_;
 char format_;
 };
