@@ -12,8 +12,8 @@ public:
   Temperature(); //default constructor
   Temperature(double, char); //constructor
 
-  void Input(); 
-  void Show();
+  void Input(); //initializes user input to instance variables
+  void Show(); //prints the temperature and scale in the format
 
   bool Set(double deg, char s); //sets user input equal to class instance variables
 
@@ -21,7 +21,7 @@ public:
   double GetDegrees(); //function that returns degrees (double)
   char GetScale(); //function that returns the scale (F, C, or K)
 
-  bool SetFormat(char); //
+  bool SetFormat(char); //function that sets the decimal format for the degrees
   bool Convert(char sc); //function that converts temperature to another scale
 
   int Compare(const Temperature& d);
