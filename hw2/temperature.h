@@ -24,8 +24,8 @@ public:
   bool SetFormat(char); //function that sets the decimal format for the degrees
   bool Convert(char sc); //function that converts temperature to another scale
 
-  int Compare(const Temperature& d);
-  void Increment(int, char);
+  int Compare(const Temperature& d); //calls convert function, compares parameter's temp to current object's temp
+  void Increment(int, char); //adds degrees of a scale to the current object's temperature
 
 private:
 //instance variables
